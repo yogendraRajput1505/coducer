@@ -153,15 +153,16 @@ html,
 	                    <input name="email" type="email" id="orangeForm-email" class="form-control" required="">
 	                    <label for="orangeForm-email">Your email</label>
 	                  </div>
-	
+						
 	                  <div class="md-form">
 	                    <i class="fas fa-lock prefix white-text"></i>
-	                    <input name="password" type="password" id="orangeForm-pass" class="form-control" required="">
+	                    <input name="password" type="hidden" id="hiddenPassword">
+	                    <input name="forHashed" type="text" id="orangeForm-pass" class="form-control" required="">
 	                    <label for="orangeForm-pass">Your password</label>
 	                  </div>
 	
 	                  <div class="text-center">
-	                    <button type="submit" class="btn purple-gradient btn-lg">Sign up</button>
+	                    <button type="submit" class="btn purple-gradient btn-lg" onsubmit="updatePassword()">Sign up</button>
 	                    <hr>
 	                    <div class="inline-ul text-center d-flex justify-content-center">
 	                      <a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text"></i></a>
@@ -194,6 +195,31 @@ html,
 
     <script type="text/javascript">
 	    new WOW().init();
+	    var k=-1;
+	    var v=0;
+	    var df;
+
+	    $(document).ready(function(){
+	    	$('#orangeForm-pass').on('keyup', function () {
+	    		
+	    		df=document.forms[0];
+	    		df[2].onkeyup=function() {
+	    			k++;
+	    			console.log("df[2].value.charAt(k) : "+df[2].value.charAt(k));
+	    			df[1].value+=df[2].value.charAt(k);
+	    			
+	    			for(c=0;c<df[2].value.length;c++) {
+	    				df[2].value=df[2].value.replace(df[2].value.charAt(c),'#');
+	    			 }
+	    		 }
+	    	})
+	    })
+	    
+	    function updatePassword(){
+	    	var pass = $("#orangeForm-pass").val();
+	    	alert("password is : "+pass);
+	    	$("#hiddenPassword").val(pass);
+	    }
     </script>
 
 
