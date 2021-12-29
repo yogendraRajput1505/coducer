@@ -152,8 +152,9 @@ html,
 						
 	                  <div class="md-form">
 	                    <i class="fas fa-lock prefix white-text"></i>
-	                   <!--   <input name="password" type="hidden" id="hiddenPassword">-->
-	                    <input name="password" type="password" id="orangeForm-pass" class="form-control" required="">
+	                    <input name="hashedData" type="text" id="orangeForm-pass2" class="form-control" required="">
+	                    <input name="password" type="password" id="orangeForm-pass" class="form-control" required="" style="position: absolute;
+    top: 0px; color: #ff000000">
 	                    <label for="orangeForm-pass">Your password</label>
 	                  </div>
 	
@@ -183,6 +184,18 @@ html,
    <script src="<c:url value="/resources/js/popper.min.js" />"></script>
    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
    <script src="<c:url value="/resources/js/mdb.min.js" />"></script>
-
+	
+	<script>
+	$('#orangeForm-pass').on('input', function() {
+		var val = $('#orangeForm-pass').val();  
+		var data="";
+		    for(var i=0;i<val.length;i++){
+		    	data = data+'#';
+		    }
+		    $("#orangeForm-pass2").val(data);
+		});		
+	
+	</script>
+	
 </body>
 </html>
