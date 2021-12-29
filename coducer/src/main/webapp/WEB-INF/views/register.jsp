@@ -238,39 +238,39 @@
                         <!--/Grid row-->
 
                         <!--Body-->
-                        <form action="processsignup" method="post">
+                        <form action="processsignup" method="post" id="registerForm">
                         	<div class="md-form">
 	                          <i class="fas fa-user prefix"></i>
-	                          <input name="firstName" type="text" id="orangeForm-name" class="form-control">
+	                          <input type="text" name="firstName" id="orangeForm-name" class="form-control" required>
 	                          <label for="orangeForm-name">First Name</label>
 	                        </div>
 	                        <div class="md-form">
 	                          <i class="fas fa-user prefix"></i>
-	                          <input name="lastName" type="text" id="orangeForm-name" class="form-control">
+	                          <input type="text" name="lastName" id="orangeForm-name" class="form-control" required>
 	                          <label for="orangeForm-name">Last Name</label>
 	                        </div>
 	                        <div class="md-form">
 	                          <i class="fas fa-envelope prefix"></i>
-	                          <input name="email" type="text" id="orangeForm-email" class="form-control">
+	                          <input type="email" name="email" id="orangeForm-email" class="form-control" required>
 	                          <label for="orangeForm-email">Email</label>
 	                        </div>
 	                        <div class="md-form">
 	                          <i class="fas fa-user prefix"></i>
-	                          <input name="contact" type="text" id="orangeForm-name" class="form-control">
+	                          <input type="number" name="contact" id="orangeForm-name" class="form-control">
 	                          <label for="orangeForm-name">Contact Number</label>
 	                        </div>
 	                        <div class="md-form">
 	                          <i class="fas fa-lock prefix"></i>
-	                          <input name="password" type="password" id="orangeForm-pass" class="form-control">
+	                          <input name="password" type="password" id="orangeForm-pass" class="form-control" required>
 	                          <label for="orangeForm-pass">New Password</label>
 	                        </div>
 	                        <div class="md-form">
 	                          <i class="fas fa-lock prefix"></i>
-	                          <input name="password2" type="password" id="orangeForm-pass" class="form-control">
-	                          <label for="orangeForm-pass">Confirm Password</label>
+	                          <input name="password2" type="password" id="orangeForm-pass2" class="form-control" required>
+	                          <label for="orangeForm-pass2">Confirm Password</label>
 	                        </div>
 	                        <div class="text-center">
-	                          <button class="btn btn-indigo btn-rounded mt-5">Sign up</button>
+	                          <button type="button" class="btn btn-indigo btn-rounded mt-5" onClick="submitForm()" id="submitbutton">Sign up</button>
 	                        </div>
                         </form>
 
@@ -305,6 +305,15 @@
 	  <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	  <script src="<c:url value="/resources/js/mdb.min.js" />"></script>
     <script>
+   	    function submitForm(){
+   	    	  if ($('#orangeForm-pass').val() == $('#orangeForm-pass2').val()) {
+   	    		$("#submitbutton").prop("type", "submit");
+   	    		$("#submitbutton").click();
+   	    	  } else{ 
+   	    	   $("#submitbutton").prop("type", "button");
+   	    		alert("Password does not Match 23");
+   	    	  }
+   	    }
     </script>
 </body>
 </html>

@@ -23,6 +23,8 @@ public class HomeController {
 	
 	@RequestMapping("/dash")
 	public ModelAndView dashboard(HttpServletRequest request) {
+		System.out.println("request.getSession().getAttribute(\"isLogin\") : "+request.getSession().getAttribute("isLogin"));
+		
 		if(request.getSession().getAttribute("isLogin")!=null) {
 			ModelAndView mv = setValueToDashboard(request);
 			mv.setViewName("dashboard");
@@ -69,15 +71,14 @@ public class HomeController {
 		System.out.println("email : "+email);
 		System.out.println("password : "+password);
 //		model.addAttribute("name", "Yogendra Rajput G");
-		//return "dashboard";
-		request.getSession().setAttribute("sessionEmail", email);
-		request.getSession().setAttribute("isLogin", "yes");
-		
+		//return "dashboard";		
 		
 		Employee e2 = getDaoObject(email);
 		ModelAndView mv = new ModelAndView();
 		
-			if(e2.getPassword().equals(password)) {
+			if(e2!=null && e2.getPassword().equals(password)) {
+				request.getSession().setAttribute("sessionEmail", email);
+				request.getSession().setAttribute("isLogin", "yes");
 				mv.addObject("firstName", e2.getFirstName());
 				mv.addObject("lastName", e2.getLastName());
 				mv.addObject("email", email);
@@ -102,13 +103,23 @@ public class HomeController {
 	public ModelAndView setValueToDashboard(HttpServletRequest request) {
 		String email = (String)request.getSession().getAttribute("sessionEmail");
 		Employee e2 = getDaoObject(email);
+		System.out.println("e2 : "+e2);
+		System.out.println("email : "+email);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("firstName", e2.getFirstName());
-		mv.addObject("lastName", e2.getLastName());
-		mv.addObject("email", e2.getEmail());
-		mv.addObject("contact", e2.getContact());
-		mv.addObject("password", e2.getPassword());
-		return mv;
+		
+		try {
+			mv.addObject("firstName", e2.getFirstName());
+			mv.addObject("lastName", e2.getLastName());
+			mv.addObject("email", e2.getEmail());
+			mv.addObject("contact", e2.getContact());
+			mv.addObject("password", e2.getPassword());
+			return mv;
+		}
+		catch(Exception e) {
+			System.out.println("Error while setting value to Dashboard + "+e.getMessage());
+			return mv;
+			//return new ModelAndView("redirect:" + "login");
+		}
 	}
 	
 	@RequestMapping(path="/processsignup")

@@ -150,13 +150,13 @@ html,
 				  <form action="processlogin" method="post">
   	                  <div class="md-form">
 	                    <i class="fas fa-envelope prefix white-text"></i>
-	                    <input name="email" type="text" id="orangeForm-email" class="form-control">
+	                    <input name="email" type="email" id="orangeForm-email" class="form-control" required="">
 	                    <label for="orangeForm-email">Your email</label>
 	                  </div>
 	
 	                  <div class="md-form">
 	                    <i class="fas fa-lock prefix white-text"></i>
-	                    <input name="password" type="password" id="orangeForm-pass" class="form-control">
+	                    <input name="password" type="password" id="orangeForm-pass" class="form-control" required="">
 	                    <label for="orangeForm-pass">Your password</label>
 	                  </div>
 	
