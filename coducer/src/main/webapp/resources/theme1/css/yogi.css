@@ -1,0 +1,25 @@
+.form-header{
+    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+    color: #fff;
+    text-align: center;
+    margin-top: -3.13rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    -webkit-border-radius: 0.125rem;
+    border-radius: 0.125rem;
+}
+
+.sidebar-fixed .logo-wrapper img {
+    max-height: 100px;
+}
+
+.navbar.scrolling-navbar {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+@media (min-width: 1200px){
+	.navbar, .page-footer, main {
+	    padding-left: 270px;
+	}
+}
