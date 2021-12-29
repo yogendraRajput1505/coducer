@@ -52,12 +52,8 @@ position:absolute;
                     </ul>
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
-                            <!-- <a class="nav-link"><i class="fab fa-facebook"></i></a> -->
+                            
                             <a href="logout"><button class="btn bg-info pt-2 pb-2">Logout</button></a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link"><i class="fab fa-twitter"></i></a> -->
-                            <!-- <a href="register.html"><button class="btn bg-info pt-2 pb-2">Sign Up</button></a> -->
                         </li>
                     </ul>
                 </div>

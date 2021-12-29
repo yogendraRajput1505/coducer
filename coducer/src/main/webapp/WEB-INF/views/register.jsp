@@ -211,32 +211,6 @@
                       <!--Grid column-->
                       <div class="col-md-5">
 
-                        <!--Grid row-->
-                        <div class="row pb-4 d-flex justify-content-center mb-4">
-
-                          <!-- <h4 class="mt-3 mr-4">
-                            <strong>Login with</strong>
-                          </h4>
-
-                          <div class="inline-ul text-center d-flex justify-content-center">
-                            <a class="p-2 m-2 fa-lg tw-ic">
-                              <i class="fab fa-twitter fa-lg indigo-text"></i>
-                            </a>
-                            <a class="p-2 m-2 fa-lg li-ic">
-                              <i class="fab fa-linkedin-in fa-lg indigo-text"> </i>
-                            </a>
-                            <a class="p-2 m-2 fa-lg ins-ic">
-                              <i class="fab fa-instagram fa-lg indigo-text"> </i>
-                            </a>
-                          </div>
-
-                          <h4 class="mt-3 ml-4">
-                            <strong>or:</strong>
-                          </h4> -->
-
-                        </div>
-                        <!--/Grid row-->
-
                         <!--Body-->
                         <form action="processsignup" method="post" id="registerForm">
                         	<div class="md-form">

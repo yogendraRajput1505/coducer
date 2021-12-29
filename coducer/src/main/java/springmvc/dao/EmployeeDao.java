@@ -1,13 +1,7 @@
 package springmvc.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.transaction.Transactional;
-
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.HibernateTemplate;
-
 import springmvc.pojo.Employee;  
 
 public class EmployeeDao {
