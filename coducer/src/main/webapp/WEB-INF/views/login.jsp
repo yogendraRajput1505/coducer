@@ -156,8 +156,8 @@ html,
 						
 	                  <div class="md-form">
 	                    <i class="fas fa-lock prefix white-text"></i>
-	                    <input name="password" type="hidden" id="hiddenPassword">
-	                    <input name="forHashed" type="text" id="orangeForm-pass" class="form-control" required="">
+	                   <!--   <input name="password" type="hidden" id="hiddenPassword">-->
+	                    <input name="password" type="password" id="orangeForm-pass" class="form-control" required="">
 	                    <label for="orangeForm-pass">Your password</label>
 	                  </div>
 	
@@ -194,32 +194,32 @@ html,
    <script src="<c:url value="/resources/js/mdb.min.js" />"></script>
 
     <script type="text/javascript">
-	    new WOW().init();
-	    var k=-1;
-	    var v=0;
-	    var df;
+//	    new WOW().init();
+	//    var k=-1;
+//	    var v=0;
+//	    var df;
 
-	    $(document).ready(function(){
-	    	$('#orangeForm-pass').on('keyup', function () {
+//	    $(document).ready(function(){
+	//    	$('#orangeForm-pass').on('keyup', function () {
 	    		
-	    		df=document.forms[0];
-	    		df[2].onkeyup=function() {
-	    			k++;
-	    			console.log("df[2].value.charAt(k) : "+df[2].value.charAt(k));
-	    			df[1].value+=df[2].value.charAt(k);
+	  //  		df=document.forms[0];
+	    //		df[2].onkeyup=function() {
+	    	//		k++;
+	    		//	console.log("df[2].value.charAt(k) : "+df[2].value.charAt(k));
+	    			//df[1].value+=df[2].value.charAt(k);
 	    			
-	    			for(c=0;c<df[2].value.length;c++) {
-	    				df[2].value=df[2].value.replace(df[2].value.charAt(c),'#');
-	    			 }
-	    		 }
-	    	})
-	    })
+	    		//	for(c=0;c<df[2].value.length;c++) {
+	    			//	df[2].value=df[2].value.replace(df[2].value.charAt(c),'#');
+	    			// }
+	    	//	 }
+	    //	})
+	   // })
 	    
-	    function updatePassword(){
-	    	var pass = $("#orangeForm-pass").val();
-	    	alert("password is : "+pass);
-	    	$("#hiddenPassword").val(pass);
-	    }
+	//    function updatePassword(){
+	  //  	var pass = $("#orangeForm-pass").val();
+	    //	alert("password is : "+pass);
+	    //	$("#hiddenPassword").val(pass);
+	  //  }
     </script>
 
 
